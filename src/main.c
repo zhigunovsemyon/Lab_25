@@ -44,9 +44,6 @@ int main(int argc, const char *args[])
 
 	fclose(source);
 
-	QueueBubbleSort(q_positive, QueueDecreaseCmp);
-	QueueBubbleSort(q_negative, QueueIncreaseCmp);
-
 	puts("Очередь неотрицательных чисел:");
 	for (int8_t buf;						   // Буфер
 		 !QueuePullFromHead(&buf, q_positive); // Чтение из очереди в буфер
