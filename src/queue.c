@@ -32,7 +32,7 @@ void QueueFree(queue **qptr)
 	return QueueFree(qptr);
 };
 
-uint8_t QueuePushToHead(int8_t num, queue *q)
+int8_t QueuePushToHead(int8_t num, queue *q)
 {
 	struct part *buf = (struct part *)malloc(sizeof(struct part));
 	if (!buf)
@@ -52,7 +52,7 @@ uint8_t QueuePushToHead(int8_t num, queue *q)
 	return 0;
 };
 
-uint8_t QueuePushToEnd(int8_t num, queue *q)
+int8_t QueuePushToEnd(int8_t num, queue *q)
 {
 	struct part *buf = (struct part *)malloc(sizeof(struct part));
 	if (!buf)
@@ -73,7 +73,7 @@ uint8_t QueuePushToEnd(int8_t num, queue *q)
 	return 0;
 };
 
-uint8_t QueuePullFromHead(int8_t *ret, queue *q)
+int8_t QueuePullFromHead(int8_t *ret, queue *q)
 {
 	if (!q->head)
 		return 1;
@@ -85,7 +85,7 @@ uint8_t QueuePullFromHead(int8_t *ret, queue *q)
 	return 0;
 };
 
-uint8_t QueuePullFromEnd(int8_t *ret, queue *q)
+int8_t QueuePullFromEnd(int8_t *ret, queue *q)
 {
 	if (!q->tail)
 		return 1;
